@@ -1,7 +1,7 @@
 %define name perl-DBD-XBase
 %define real_name DBD-XBase
 %define version 0.241
-%define release	%mkrel 2
+%define release	%mkrel 3
 
 %define summary Module for dealing with XBase files
 
