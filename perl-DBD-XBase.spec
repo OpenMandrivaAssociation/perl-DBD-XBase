@@ -13,7 +13,6 @@ License:        GPL or Artistic
 Group:          Development/Perl
 URL:            http://www.fi.muni.cz/~adelton/perl/
 Source0:        %real_name-%version.tar.bz2
-BuildRoot:      %_tmppath/%name-buildroot
 Buildrequires:	perl-devel
 Requires:       perl
 BuildArch:		noarch
