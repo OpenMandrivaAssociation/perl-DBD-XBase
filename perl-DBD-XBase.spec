@@ -15,6 +15,8 @@ URL:            http://www.fi.muni.cz/~adelton/perl/
 Source0:        %real_name-%version.tar.bz2
 BuildRoot:      %_tmppath/%name-buildroot
 Buildrequires:	perl-devel
+# for testsuite:
+#Buildrequires:	perl-DBI
 Requires:       perl
 BuildArch:		noarch
 
