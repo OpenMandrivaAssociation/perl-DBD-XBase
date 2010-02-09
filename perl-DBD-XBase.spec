@@ -1,24 +1,20 @@
-%define name perl-DBD-XBase
-%define real_name DBD-XBase
-%define version 0.241
-%define release	%mkrel 6
+%define upstream_name    DBD-XBase
+%define upstream_version 0.241
 
-%define summary Module for dealing with XBase files
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Summary:        %summary
-Name:           %name
-Version:        %version
-Release:        %release
-License:        GPL or Artistic
-Group:          Development/Perl
-URL:            http://www.fi.muni.cz/~adelton/perl/
-Source0:        %real_name-%version.tar.bz2
-BuildRoot:      %_tmppath/%name-buildroot
-Buildrequires:	perl-devel
+Summary:    Module for dealing with XBase files
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://www.fi.muni.cz/~adelton/perl/
+Source0:    %upstream_name-%upstream_version.tar.bz2
+
 # for testsuite:
 #Buildrequires:	perl-DBI
-Requires:       perl
 BuildArch:		noarch
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Package DBD::XBase contains module XBase that can read and write dbf and
@@ -26,12 +22,14 @@ dbt/fpt files, as well as a DBI driver DBD::XBase, that allows work with these
 files using SQL commands.
 
 %prep
-%setup -q -n %{real_name}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 CFLAGS="%{optflags}" %{__perl} Makefile.PL INSTALLDIRS=vendor PREFIX=%{_prefix}
 %make
-make test
+
+%check
+%make test
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %buildroot
@@ -50,4 +48,3 @@ make test
 %dir %{perl_vendorlib}/XBase
 %{perl_vendorlib}/XBase/*
 %{_mandir}/*/*
-
