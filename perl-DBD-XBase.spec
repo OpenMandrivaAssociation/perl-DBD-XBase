@@ -8,11 +8,9 @@ Release:    %mkrel 1
 Summary:    Module for dealing with XBase files
 License:    GPL+ or Artistic
 Group:      Development/Perl
-Url:        http://www.fi.muni.cz/~adelton/perl/
-Source0:    %upstream_name-%upstream_version.tar.bz2
-
-# for testsuite:
-#Buildrequires:	perl-DBI
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/DBD/%{upstream_name}-%{upstream_version}.tar.gz
+Buildrequires:	perl(DBI)
 BuildArch:		noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
@@ -25,18 +23,18 @@ files using SQL commands.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-CFLAGS="%{optflags}" %{__perl} Makefile.PL INSTALLDIRS=vendor PREFIX=%{_prefix}
+%{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %buildroot
-%makeinstall PREFIX=$RPM_BUILD_ROOT%{_prefix}
+rm -rf %buildroot
+%makeinstall_std
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %buildroot
+rm -rf %buildroot
 
 %files
 %defattr(-,root,root)
