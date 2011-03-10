@@ -1,5 +1,5 @@
 %define upstream_name    DBD-XBase
-%define upstream_version 1.01
+%define upstream_version 1.03
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
