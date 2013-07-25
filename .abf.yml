@@ -1,2 +1,4 @@
+removed_sources:
+  DBD-XBase-1.03.tar.gz: a967be4d28fe31b20a903bb47e4030e7e1d42838
 sources:
-  "DBD-XBase-1.03.tar.gz": a967be4d28fe31b20a903bb47e4030e7e1d42838
+  DBD-XBase-1.05.tar.gz: f124355a060c85939de0cad58369803ce0d32f20
