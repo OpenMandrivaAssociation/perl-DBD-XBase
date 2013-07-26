@@ -1,15 +1,15 @@
 %define upstream_name    DBD-XBase
-%define upstream_version 1.03
+%define upstream_version 1.05
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Version:	%perl_convert_version 1.05
+Release:	1
 
 Summary:	Module for dealing with XBase files
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/DBD/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/DBD/DBD-XBase-1.05.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(DBI)
@@ -87,4 +87,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Tue Jun 03 2003 Tibor Pittich <Tibor.Pittich@phuture.sk> 0.232-1mdk
 - initial import into Mandrake. This module required perl-Cstools.
+
 
