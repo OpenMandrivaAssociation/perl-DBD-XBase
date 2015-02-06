@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version 1.05
-Release:	2
+Release:	3
 
 Summary:	Module for dealing with XBase files
 License:	GPL+ or Artistic
