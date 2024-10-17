@@ -8,7 +8,7 @@ Release:	3
 Summary:	Module for dealing with XBase files
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/DBD/DBD-XBase-1.05.tar.gz
 
 BuildRequires:	perl-devel
